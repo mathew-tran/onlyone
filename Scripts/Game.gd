@@ -43,10 +43,12 @@ func DecideNextPawn():
 		nextPawn.StartTurn()
 		CurrentPawn = nextPawn
 		TabIndex = CurrentPawn.get_index()
+		OnPawnUpdate.emit()
 	else:
 		for pawn in GetPawnList():
 			pawn.Refresh()
 		DecideNextPawn()
+	
 		
 func EndTurn():
 	DecideNextPawn()
@@ -57,3 +59,8 @@ func GetCurrentPawn():
 func _process(delta: float) -> void:
 	if GetCurrentPawn():
 		$Camera2D.global_position = GetCurrentPawn().global_position
+
+
+func _on_pawn_list_child_order_changed() -> void:
+	if len(GetPawnList()) == 1:
+		print("YOU WIN!")

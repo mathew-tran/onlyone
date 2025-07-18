@@ -1,0 +1,39 @@
+[gd_resource type="Resource" script_class="CharacterData" load_steps=8 format=3 uid="uid://c2dm8hbtxneb8"]
+
+[ext_resource type="Script" uid="uid://bua2be0wdlxyx" path="res://Content/AttackPositionData.gd" id="1_54xat"]
+[ext_resource type="Texture2D" uid="uid://cwc4shohu0smj" path="res://Art/Characters/Mage.png" id="2_54xat"]
+[ext_resource type="Script" uid="uid://cvnca3hc0gyfj" path="res://Content/CharacterData.gd" id="3_gkrdp"]
+
+[sub_resource type="Resource" id="Resource_1txl5"]
+script = ExtResource("1_54xat")
+x = 0
+y = 1
+metadata/_custom_type_script = "uid://bua2be0wdlxyx"
+
+[sub_resource type="Resource" id="Resource_gkrdp"]
+script = ExtResource("1_54xat")
+x = 0
+y = 2
+metadata/_custom_type_script = "uid://bua2be0wdlxyx"
+
+[sub_resource type="Resource" id="Resource_nk7wc"]
+script = ExtResource("1_54xat")
+x = 0
+y = 3
+metadata/_custom_type_script = "uid://bua2be0wdlxyx"
+
+[sub_resource type="Resource" id="Resource_sj6uv"]
+script = ExtResource("1_54xat")
+x = 0
+y = 4
+metadata/_custom_type_script = "uid://bua2be0wdlxyx"
+
+[resource]
+script = ExtResource("3_gkrdp")
+Name = "Mage"
+Moves = 6
+CharImage = ExtResource("2_54xat")
+AttackPositions = Array[ExtResource("1_54xat")]([SubResource("Resource_1txl5"), SubResource("Resource_gkrdp"), SubResource("Resource_nk7wc"), SubResource("Resource_sj6uv")])
+AttackDescription = "Does a wave of damage in front
+"
+metadata/_custom_type_script = "uid://cvnca3hc0gyfj"

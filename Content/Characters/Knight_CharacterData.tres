@@ -1,11 +1,20 @@
-[gd_resource type="Resource" script_class="CharacterData" load_steps=3 format=3 uid="uid://5bjel7qo2qqg"]
+[gd_resource type="Resource" script_class="CharacterData" load_steps=5 format=3 uid="uid://5bjel7qo2qqg"]
 
 [ext_resource type="Script" uid="uid://cvnca3hc0gyfj" path="res://Content/CharacterData.gd" id="1_7lmro"]
-[ext_resource type="Texture2D" uid="uid://cwnwy5k2nn5es" path="res://Art/Knight.png" id="1_enjg0"]
+[ext_resource type="Script" uid="uid://bua2be0wdlxyx" path="res://Content/AttackPositionData.gd" id="1_8s5gu"]
+[ext_resource type="Texture2D" uid="uid://cwnwy5k2nn5es" path="res://Art/Characters/Knight.png" id="2_8s5gu"]
+
+[sub_resource type="Resource" id="Resource_hp32p"]
+script = ExtResource("1_8s5gu")
+x = 0
+y = 1
+metadata/_custom_type_script = "uid://bua2be0wdlxyx"
 
 [resource]
 script = ExtResource("1_7lmro")
 Name = "Knight"
 Moves = 4
-CharImage = ExtResource("1_enjg0")
+CharImage = ExtResource("2_8s5gu")
+AttackPositions = Array[ExtResource("1_8s5gu")]([SubResource("Resource_hp32p")])
+AttackDescription = "Attacks straight ahead"
 metadata/_custom_type_script = "uid://cvnca3hc0gyfj"

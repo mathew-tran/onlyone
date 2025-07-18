@@ -1,9 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://b6ruj6kr3b8ul"]
+[gd_scene load_steps=8 format=3 uid="uid://b6ruj6kr3b8ul"]
 
 [ext_resource type="PackedScene" uid="uid://dovjqvgagph61" path="res://Prefabs/AvailableTile.tscn" id="1_r150o"]
 [ext_resource type="Script" uid="uid://c08c3g1akko6l" path="res://Scripts/Game.gd" id="1_rgh2o"]
 [ext_resource type="PackedScene" uid="uid://ktwoml5qvsxe" path="res://Prefabs/Pawn.tscn" id="2_idj7w"]
 [ext_resource type="PackedScene" uid="uid://ccrj4phptewfq" path="res://Prefabs/UI/CurrentCharacterUI.tscn" id="3_kln2b"]
+[ext_resource type="Resource" uid="uid://ctx3rsvar40jc" path="res://Content/Characters/Thief_CharacterData.tres" id="5_pbw6q"]
+[ext_resource type="Resource" uid="uid://c2dm8hbtxneb8" path="res://Content/Characters/Mage_CharacterData.tres" id="6_v1gob"]
+[ext_resource type="Resource" uid="uid://dwo4q1korpkq2" path="res://Content/Characters/Barbarian_CharacterData.tres" id="7_jw32o"]
 
 [node name="Game" type="Node2D" node_paths=PackedStringArray("CurrentPawn") groups=["Game"]]
 position = Vector2(192, 384)
@@ -38,18 +41,32 @@ position = Vector2(0, 96)
 [node name="AvailableTile9" parent="Tiles" instance=ExtResource("1_r150o")]
 position = Vector2(384, 96)
 
+[node name="AvailableTile12" parent="Tiles" instance=ExtResource("1_r150o")]
+position = Vector2(384, 192)
+
+[node name="AvailableTile13" parent="Tiles" instance=ExtResource("1_r150o")]
+position = Vector2(288, 192)
+
+[node name="AvailableTile14" parent="Tiles" instance=ExtResource("1_r150o")]
+position = Vector2(480, 192)
+
+[node name="AvailableTile15" parent="Tiles" instance=ExtResource("1_r150o")]
+position = Vector2(576, 192)
+
+[node name="AvailableTile16" parent="Tiles" instance=ExtResource("1_r150o")]
+position = Vector2(288, -96)
+
+[node name="AvailableTile17" parent="Tiles" instance=ExtResource("1_r150o")]
+position = Vector2(288, -192)
+
+[node name="AvailableTile18" parent="Tiles" instance=ExtResource("1_r150o")]
+position = Vector2(384, -192)
+
 [node name="AvailableTile10" parent="Tiles" instance=ExtResource("1_r150o")]
 position = Vector2(480, 96)
 
 [node name="AvailableTile11" parent="Tiles" instance=ExtResource("1_r150o")]
 position = Vector2(576, 96)
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Panel" parent="CanvasLayer" instance=ExtResource("3_kln2b")]
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position_smoothing_enabled = true
 
 [node name="PawnList" type="Node2D" parent="."]
 
@@ -57,6 +74,34 @@ position_smoothing_enabled = true
 
 [node name="Pawn2" parent="PawnList" instance=ExtResource("2_idj7w")]
 position = Vector2(288, 0)
+CharData = ExtResource("5_pbw6q")
 
 [node name="Pawn3" parent="PawnList" instance=ExtResource("2_idj7w")]
 position = Vector2(576, 96)
+CharData = ExtResource("6_v1gob")
+
+[node name="Pawn4" parent="PawnList" instance=ExtResource("2_idj7w")]
+position = Vector2(384, -192)
+CharData = ExtResource("7_jw32o")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Panel" parent="CanvasLayer" instance=ExtResource("3_kln2b")]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 0.0
+offset_left = -400.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 150.0
+grow_horizontal = 0
+grow_vertical = 1
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position_smoothing_enabled = true
+
+[node name="Effects" type="Node2D" parent="." groups=["Effects"]]
+
+[connection signal="child_order_changed" from="PawnList" to="." method="_on_pawn_list_child_order_changed"]

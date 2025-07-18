@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="CharacterData" load_steps=6 format=3 uid="uid://ctx3rsvar40jc"]
+
+[ext_resource type="Script" uid="uid://bua2be0wdlxyx" path="res://Content/AttackPositionData.gd" id="1_kyrt5"]
+[ext_resource type="Script" uid="uid://cvnca3hc0gyfj" path="res://Content/CharacterData.gd" id="2_kyrt5"]
+[ext_resource type="Texture2D" uid="uid://cr1jemn6rmt6" path="res://Art/Characters/Thief.png" id="2_oue01"]
+
+[sub_resource type="Resource" id="Resource_oue01"]
+script = ExtResource("1_kyrt5")
+x = 0
+y = 1
+metadata/_custom_type_script = "uid://bua2be0wdlxyx"
+
+[sub_resource type="Resource" id="Resource_nv62a"]
+script = ExtResource("1_kyrt5")
+x = 0
+y = -1
+metadata/_custom_type_script = "uid://bua2be0wdlxyx"
+
+[resource]
+script = ExtResource("2_kyrt5")
+Name = "Thief"
+Moves = 6
+CharImage = ExtResource("2_oue01")
+AttackPositions = Array[ExtResource("1_kyrt5")]([SubResource("Resource_oue01"), SubResource("Resource_nv62a")])
+AttackDescription = "Attacks front and behind"
+metadata/_custom_type_script = "uid://cvnca3hc0gyfj"

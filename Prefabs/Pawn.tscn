@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://ktwoml5qvsxe"]
 
-[ext_resource type="Texture2D" uid="uid://cwnwy5k2nn5es" path="res://Art/Knight.png" id="1_4orw8"]
+[ext_resource type="Texture2D" uid="uid://cwnwy5k2nn5es" path="res://Art/Characters/Knight.png" id="1_4orw8"]
 [ext_resource type="Script" uid="uid://dfjye1cc2jtpq" path="res://Scripts/Pawn.gd" id="1_ohklm"]
 [ext_resource type="Resource" uid="uid://5bjel7qo2qqg" path="res://Content/Characters/Knight_CharacterData.tres" id="2_mq203"]
 [ext_resource type="Texture2D" uid="uid://75wg7267x21j" path="res://Art/Highlight.png" id="4_qcmd7"]

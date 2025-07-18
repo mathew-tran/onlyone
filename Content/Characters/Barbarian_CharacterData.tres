@@ -1,0 +1,38 @@
+[gd_resource type="Resource" script_class="CharacterData" load_steps=8 format=3 uid="uid://dwo4q1korpkq2"]
+
+[ext_resource type="Script" uid="uid://bua2be0wdlxyx" path="res://Content/AttackPositionData.gd" id="1_vncrd"]
+[ext_resource type="Texture2D" uid="uid://dfx71fqipefk0" path="res://Art/Characters/Barbarian.png" id="2_vncrd"]
+[ext_resource type="Script" uid="uid://cvnca3hc0gyfj" path="res://Content/CharacterData.gd" id="3_gr37w"]
+
+[sub_resource type="Resource" id="Resource_oue01"]
+script = ExtResource("1_vncrd")
+x = 1
+y = 1
+metadata/_custom_type_script = "uid://bua2be0wdlxyx"
+
+[sub_resource type="Resource" id="Resource_nv62a"]
+script = ExtResource("1_vncrd")
+x = 1
+y = -1
+metadata/_custom_type_script = "uid://bua2be0wdlxyx"
+
+[sub_resource type="Resource" id="Resource_8sybj"]
+script = ExtResource("1_vncrd")
+x = -1
+y = -1
+metadata/_custom_type_script = "uid://bua2be0wdlxyx"
+
+[sub_resource type="Resource" id="Resource_gr37w"]
+script = ExtResource("1_vncrd")
+x = -1
+y = 1
+metadata/_custom_type_script = "uid://bua2be0wdlxyx"
+
+[resource]
+script = ExtResource("3_gr37w")
+Name = "Barbarian"
+Moves = 6
+CharImage = ExtResource("2_vncrd")
+AttackPositions = Array[ExtResource("1_vncrd")]([SubResource("Resource_oue01"), SubResource("Resource_nv62a"), SubResource("Resource_8sybj"), SubResource("Resource_gr37w")])
+AttackDescription = "Attacks diagonally"
+metadata/_custom_type_script = "uid://cvnca3hc0gyfj"

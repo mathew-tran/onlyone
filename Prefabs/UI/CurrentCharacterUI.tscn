@@ -1,10 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://ccrj4phptewfq"]
 
-[ext_resource type="Texture2D" uid="uid://cwnwy5k2nn5es" path="res://Art/Knight.png" id="1_8fn3n"]
+[ext_resource type="Texture2D" uid="uid://cwnwy5k2nn5es" path="res://Art/Characters/Knight.png" id="1_8fn3n"]
 [ext_resource type="Script" uid="uid://bfhrs36tuenoa" path="res://Scripts/UI/CurrentCharacterUI.gd" id="1_f73f1"]
 
 [node name="Panel" type="Panel"]
-custom_minimum_size = Vector2(400, 100)
+custom_minimum_size = Vector2(400, 150)
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
@@ -19,6 +19,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer2"]
@@ -31,8 +32,10 @@ stretch_mode = 5
 [node name="Label" type="Label" parent="HBoxContainer/VBoxContainer2"]
 layout_mode = 2
 text = "KNIGHT"
+horizontal_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
 
 [node name="Label" type="Label" parent="HBoxContainer/VBoxContainer"]
@@ -40,5 +43,10 @@ layout_mode = 2
 text = "Moves Left"
 
 [node name="Label2" type="Label" parent="HBoxContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+text = "bCanShoot"
+
+[node name="AttackDescription" type="Label" parent="HBoxContainer/VBoxContainer"]
 layout_mode = 2
 text = "bCanShoot"

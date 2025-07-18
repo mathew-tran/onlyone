@@ -1,3 +1,5 @@
+@tool
+
 extends Area2D
 
 class_name Pawn
@@ -32,6 +34,7 @@ signal OnCharacterUpdate(pawn)
 
 @export var CharData : CharacterData
 
+	
 func IsTired():
 	return CurrentState == PAWN_STATE.TIRED
 	
@@ -53,12 +56,11 @@ func Refresh():
 	modulate = Color.ANTIQUE_WHITE
 	
 func StartTurn():
-	
-	Helper.GetGame().OnPawnUpdate.emit()
 	UpdateState(PAWN_STATE.USING)
 	print(name + " TURN START")
 	set_process(true)
 	modulate = Color.WHITE
+	Helper.GetGame().OnPawnUpdate.emit()
 	
 func StallTurn():
 	UpdateState(PAWN_STATE.TO_BE_USED)
@@ -75,25 +77,32 @@ func EndTurn():
 	
 	
 func _ready() -> void:
-	pass
+	$TextureRect.texture = CharData.CharImage
 	
 func _process(delta: float) -> void:
+	if Engine.is_editor_hint():
+		return
+		
 	if CurrentState != PAWN_STATE.USING:
 		return
 	
 	if MovesLeft <= 0 and bCanShoot == false:
 		EndTurn()
 		return
+		
 	if Input.is_action_just_pressed("end_turn"):
 		EndTurn()
 		return
 	
 	if Input.is_action_just_pressed("attack"):
 		if bCanShoot:
+			set_process(false)
 			bCanShoot = false
 			MovesLeft = 0
 			print(name + "shoot")
+			await Shoot()
 			Helper.GetGame().OnPawnUpdate.emit()
+			set_process(true)
 		return
 		
 	if CanMove() == false:
@@ -152,7 +161,38 @@ func CheckResult(areas):
 				return MOVE_TEST_RESULT.OTHER_PAWN
 	return MOVE_TEST_RESULT.OPEN_SPOT
 	
-
+func Shoot():
+	for pos in CharData.AttackPositions:
+		var rot = 0
+		match CurrentDirection:
+			DIRECTION.LEFT:
+				rot = 90
+			DIRECTION.UP:
+				rot = 180
+			DIRECTION.RIGHT:
+				rot = 270
+			DIRECTION.DOWN:
+				rot = 0
+		var targetPosition = Vector2(pos.x, pos.y).rotated(deg_to_rad(rot))
+		var projClass = load("res://Prefabs/Attacks/AttackProjectile.tscn")
+		var instance = projClass.instantiate() as Projectile
+		instance.global_position = global_position
+		instance.InitialPosition = global_position
+		instance.TargetPosition = global_position + targetPosition * Definitions.CellSize
+		Helper.GetEffectsGroup().add_child(instance)
+		await instance.OnComplete
+	
+func GetForwardVector():
+	match CurrentDirection:
+		DIRECTION.LEFT:
+			return Vector2.LEFT
+		DIRECTION.UP:
+			return Vector2.UP
+		DIRECTION.RIGHT:
+			return Vector2.RIGHT
+		DIRECTION.DOWN:
+			return Vector2.DOWN
+			
 func UpdateSprite():
 	match CurrentDirection:
 		DIRECTION.LEFT:
@@ -173,3 +213,9 @@ func UpdateSprite():
 	else:
 		$TiredHighlight.visible = false
 		
+func Kill():
+	var tween = get_tree().create_tween()
+	tween.tween_property(self, "scale", Vector2.ZERO, .3)
+	await tween.finished
+	
+	queue_free()
