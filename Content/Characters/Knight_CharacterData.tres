@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CharacterData" load_steps=3 format=3 uid="uid://5bjel7qo2qqg"]
+
+[ext_resource type="Script" uid="uid://cvnca3hc0gyfj" path="res://Content/CharacterData.gd" id="1_7lmro"]
+[ext_resource type="Texture2D" uid="uid://cwnwy5k2nn5es" path="res://Art/Knight.png" id="1_enjg0"]
+
+[resource]
+script = ExtResource("1_7lmro")
+Name = "Knight"
+Moves = 4
+CharImage = ExtResource("1_enjg0")
+metadata/_custom_type_script = "uid://cvnca3hc0gyfj"

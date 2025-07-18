@@ -1,13 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://ktwoml5qvsxe"]
+[gd_scene load_steps=7 format=3 uid="uid://ktwoml5qvsxe"]
 
 [ext_resource type="Texture2D" uid="uid://cwnwy5k2nn5es" path="res://Art/Knight.png" id="1_4orw8"]
 [ext_resource type="Script" uid="uid://dfjye1cc2jtpq" path="res://Scripts/Pawn.gd" id="1_ohklm"]
+[ext_resource type="Resource" uid="uid://5bjel7qo2qqg" path="res://Content/Characters/Knight_CharacterData.tres" id="2_mq203"]
+[ext_resource type="Texture2D" uid="uid://75wg7267x21j" path="res://Art/Highlight.png" id="4_qcmd7"]
+[ext_resource type="Texture2D" uid="uid://orhjtp17nisk" path="res://Art/TiredHighlight.png" id="5_dfchu"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4orw8"]
 radius = 28.72
 
 [node name="Pawn" type="Area2D"]
 script = ExtResource("1_ohklm")
+CharData = ExtResource("2_mq203")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 custom_minimum_size = Vector2(85, 85)
@@ -17,6 +21,30 @@ offset_right = 42.5
 offset_bottom = 42.5
 pivot_offset = Vector2(42.5, 42.5)
 texture = ExtResource("1_4orw8")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="Higlight" type="TextureRect" parent="."]
+visible = false
+custom_minimum_size = Vector2(120, 90)
+offset_left = -60.0
+offset_top = -60.0
+offset_right = 60.0
+offset_bottom = 60.0
+pivot_offset = Vector2(60, 60)
+texture = ExtResource("4_qcmd7")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="TiredHighlight" type="TextureRect" parent="."]
+visible = false
+custom_minimum_size = Vector2(120, 90)
+offset_left = -60.0
+offset_top = -60.0
+offset_right = 60.0
+offset_bottom = 60.0
+pivot_offset = Vector2(60, 60)
+texture = ExtResource("5_dfchu")
 expand_mode = 4
 stretch_mode = 5
 
