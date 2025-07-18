@@ -1,0 +1,43 @@
+[gd_scene load_steps=3 format=3 uid="uid://b6ruj6kr3b8ul"]
+
+[ext_resource type="PackedScene" uid="uid://dovjqvgagph61" path="res://Prefabs/AvailableTile.tscn" id="1_r150o"]
+[ext_resource type="PackedScene" uid="uid://ktwoml5qvsxe" path="res://Prefabs/Pawn.tscn" id="2_idj7w"]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(192, 384)
+
+[node name="Tiles" type="Node2D" parent="."]
+
+[node name="AvailableTile" parent="Tiles" instance=ExtResource("1_r150o")]
+
+[node name="AvailableTile2" parent="Tiles" instance=ExtResource("1_r150o")]
+position = Vector2(96, 0)
+
+[node name="AvailableTile3" parent="Tiles" instance=ExtResource("1_r150o")]
+position = Vector2(192, 0)
+
+[node name="AvailableTile4" parent="Tiles" instance=ExtResource("1_r150o")]
+position = Vector2(288, 0)
+
+[node name="AvailableTile5" parent="Tiles" instance=ExtResource("1_r150o")]
+position = Vector2(288, 96)
+
+[node name="AvailableTile6" parent="Tiles" instance=ExtResource("1_r150o")]
+position = Vector2(192, 96)
+
+[node name="AvailableTile7" parent="Tiles" instance=ExtResource("1_r150o")]
+position = Vector2(96, 96)
+
+[node name="AvailableTile8" parent="Tiles" instance=ExtResource("1_r150o")]
+position = Vector2(0, 96)
+
+[node name="AvailableTile9" parent="Tiles" instance=ExtResource("1_r150o")]
+position = Vector2(384, 96)
+
+[node name="AvailableTile10" parent="Tiles" instance=ExtResource("1_r150o")]
+position = Vector2(480, 96)
+
+[node name="AvailableTile11" parent="Tiles" instance=ExtResource("1_r150o")]
+position = Vector2(576, 96)
+
+[node name="Pawn" parent="." instance=ExtResource("2_idj7w")]

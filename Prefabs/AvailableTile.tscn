@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://dovjqvgagph61"]
+
+[ext_resource type="Texture2D" uid="uid://by0ra55nld5um" path="res://Art/Tile.png" id="1_kn52d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_idj7w"]
+size = Vector2(96, 96)
+
+[node name="AvailableTile" type="Area2D"]
+collision_layer = 3
+
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(96, 96)
+offset_left = -48.0
+offset_top = -48.0
+offset_right = 48.0
+offset_bottom = 48.0
+texture = ExtResource("1_kn52d")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_idj7w")
