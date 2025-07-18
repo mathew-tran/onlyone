@@ -24,9 +24,9 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
      showguides="true"
-     inkscape:zoom="4.0668163"
-     inkscape:cx="69.095818"
-     inkscape:cy="-50.285035"
+     inkscape:zoom="2.8756734"
+     inkscape:cx="381.12812"
+     inkscape:cy="346.17979"
      inkscape:window-width="1920"
      inkscape:window-height="1009"
      inkscape:window-x="-8"
@@ -95,18 +95,24 @@
     <text
        xml:space="preserve"
        id="text4"
-       style="font-size:26.6667px;font-family:Verdana;-inkscape-font-specification:Verdana;text-align:justify;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect4);fill:none;stroke:#ffffff;stroke-width:1.59874"
+       style="font-size:26.6667px;font-family:Verdana;-inkscape-font-specification:Verdana;text-align:justify;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect4);display:inline;fill:none;stroke:#ffffff;stroke-width:1.59874"
        transform="matrix(0.26458333,0,0,0.26458333,-6.2565056,7.1765799)"><tspan
          x="260.46094"
          y="106.04954"
          id="tspan1">zzz</tspan></text>
     <path
        id="path5"
-       style="fill:#ececec;stroke:none;stroke-width:0.346929"
+       style="fill:none;stroke:none;stroke-width:0.346929"
        d="m 103.04483,84.981608 c -6.772794,-0.0072 -13.545574,-0.0048 -20.318364,0.002 0.0503,7.987542 -0.01,15.975322 0.041,23.962892 7.56507,0.0497 15.14,0.0124 22.699014,0.019 0.67769,0.18731 1.44399,-0.32241 1.26608,-1.07444 0.0106,-7.62735 0.0252,-15.254745 -0.0159,-22.882033 -1.22371,-0.04735 -2.44758,-0.04195 -3.67187,-0.02734 z"
        inkscape:export-filename="KnightAttack.png"
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96" />
+    <circle
+       style="fill:#ff0000;fill-opacity:1;stroke:#000000;stroke-width:0.510076"
+       id="path14"
+       cx="94.741463"
+       cy="96.988136"
+       r="9.9852724" />
     <g
        id="g7"
        transform="translate(-30.187414,64.798845)">
@@ -166,5 +172,32 @@
        style="fill:#c83737;fill-opacity:1;stroke:none;stroke-width:0.423"
        d="m 4.5541356,-19.517723 0.3903546,-3.643309 3.6433085,1.821654 c 0,0 0.2602362,-1.561418 1.0409455,-1.561418 0.7807088,0 3.9035448,1.040945 3.9035448,1.040945 0,0 1.301181,-1.691536 1.431299,-0.260236 0.130118,1.4313 -0.65059,4.814372 -0.65059,4.814372 l -2.081891,-0.390354 -2.3421268,0.650591 -1.1710634,-2.472245 -2.0818906,2.08189 -1.0409452,-1.561418 z"
        id="path11" />
+    <circle
+       style="fill:#ff0000;fill-opacity:1;stroke:#ffffff;stroke-width:0.423"
+       id="path12"
+       cx="71.146774"
+       cy="-1.633809"
+       r="2.7602229"
+       inkscape:export-filename="Art\AttackPreviewHighlight.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <rect
+       style="fill:#858586;stroke:none;stroke-width:0.346929"
+       id="rect13"
+       width="25.05307"
+       height="25.05307"
+       x="115.94878"
+       y="55.166424"
+       ry="0.64030832"
+       inkscape:export-filename="Art\TileDirt.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       id="path13"
+       style="fill:#a0892c;stroke:none;stroke-width:0.346929"
+       d="m 136.77779,55.701172 c -6.77279,-0.0072 -13.54558,-0.0048 -20.31836,0.002 0.0503,7.987542 -0.01,15.975324 0.041,23.962891 7.56507,0.04966 15.14,0.01236 22.69901,0.01897 0.67769,0.187314 1.44399,-0.322406 1.26608,-1.074441 0.0106,-7.627347 0.0252,-15.254743 -0.0159,-22.882031 -1.22371,-0.04735 -2.44758,-0.04195 -3.67187,-0.02734 z"
+       inkscape:export-filename="Tile.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
   </g>
 </svg>

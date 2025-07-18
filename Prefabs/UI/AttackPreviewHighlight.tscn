@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://bg2lj3wilnxfn"]
+
+[ext_resource type="Texture2D" uid="uid://gq3fnv26t5fe" path="res://Art/AttackPreviewHighlight.png" id="1_ysi3s"]
+
+[node name="PreviewHighlight" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(22, 22)
+offset_left = -11.0
+offset_top = -11.0
+offset_right = 11.0
+offset_bottom = 11.0
+texture = ExtResource("1_ysi3s")
+expand_mode = 4
+stretch_mode = 5

@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://dh1j5i3ldx5i2"]
+
+[ext_resource type="Script" uid="uid://cnkkmghq70jjh" path="res://Scripts/Tile.gd" id="1_nnqxs"]
+[ext_resource type="Texture2D" uid="uid://bbmfp1uigio8" path="res://Art/TileDirt.png" id="2_nnqxs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_idj7w"]
+size = Vector2(96, 96)
+
+[node name="DirtTile" type="Area2D"]
+collision_layer = 3
+script = ExtResource("1_nnqxs")
+bIsWalkable = false
+bBreakable = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(96, 96)
+offset_left = -48.0
+offset_top = -48.0
+offset_right = 48.0
+offset_bottom = 48.0
+texture = ExtResource("2_nnqxs")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_idj7w")

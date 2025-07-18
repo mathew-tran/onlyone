@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://dovjqvgagph61"]
+[gd_scene load_steps=4 format=3 uid="uid://dovjqvgagph61"]
 
+[ext_resource type="Script" uid="uid://cnkkmghq70jjh" path="res://Scripts/Tile.gd" id="1_47j1d"]
 [ext_resource type="Texture2D" uid="uid://by0ra55nld5um" path="res://Art/Tile.png" id="1_kn52d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_idj7w"]
@@ -7,6 +8,7 @@ size = Vector2(96, 96)
 
 [node name="AvailableTile" type="Area2D"]
 collision_layer = 3
+script = ExtResource("1_47j1d")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 custom_minimum_size = Vector2(96, 96)

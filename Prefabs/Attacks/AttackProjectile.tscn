@@ -4,9 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://dl43ol21a51jd" path="res://Art/Attacks/KnightAttack.png" id="2_g2jdm"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jlyx8"]
-radius = 29.0
+radius = 15.0
 
 [node name="AttackProjectile" type="Area2D"]
+collision_layer = 5
 script = ExtResource("1_khdtq")
 
 [node name="TextureRect" type="TextureRect" parent="."]

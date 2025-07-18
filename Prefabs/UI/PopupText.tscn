@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://c4tde0t16qh3o"]
+
+[ext_resource type="Script" uid="uid://b8a8ktr0fk5eg" path="res://Scripts/UI/PopupText.gd" id="1_waqgv"]
+
+[node name="PopupText" type="Node2D"]
+script = ExtResource("1_waqgv")
+
+[node name="Label" type="Label" parent="."]
+custom_minimum_size = Vector2(300, 50)
+offset_left = -150.0
+offset_top = -25.0
+offset_right = 150.0
+offset_bottom = 25.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+text = "BLAH"
+horizontal_alignment = 1
+vertical_alignment = 1

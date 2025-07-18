@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://b6ruj6kr3b8ul"]
+[gd_scene load_steps=9 format=3 uid="uid://b6ruj6kr3b8ul"]
 
-[ext_resource type="PackedScene" uid="uid://dovjqvgagph61" path="res://Prefabs/AvailableTile.tscn" id="1_r150o"]
+[ext_resource type="PackedScene" uid="uid://dovjqvgagph61" path="res://Prefabs/Tile.tscn" id="1_r150o"]
 [ext_resource type="Script" uid="uid://c08c3g1akko6l" path="res://Scripts/Game.gd" id="1_rgh2o"]
+[ext_resource type="PackedScene" uid="uid://dh1j5i3ldx5i2" path="res://Prefabs/DirtTile.tscn" id="2_50glp"]
 [ext_resource type="PackedScene" uid="uid://ktwoml5qvsxe" path="res://Prefabs/Pawn.tscn" id="2_idj7w"]
 [ext_resource type="PackedScene" uid="uid://ccrj4phptewfq" path="res://Prefabs/UI/CurrentCharacterUI.tscn" id="3_kln2b"]
 [ext_resource type="Resource" uid="uid://ctx3rsvar40jc" path="res://Content/Characters/Thief_CharacterData.tres" id="5_pbw6q"]
@@ -15,13 +16,28 @@ CurrentPawn = NodePath("PawnList/Pawn")
 
 [node name="Tiles" type="Node2D" parent="."]
 
+[node name="DirtTile" parent="Tiles" instance=ExtResource("2_50glp")]
+position = Vector2(288, -96)
+
+[node name="DirtTile3" parent="Tiles" instance=ExtResource("2_50glp")]
+position = Vector2(768, -96)
+
+[node name="DirtTile4" parent="Tiles" instance=ExtResource("2_50glp")]
+position = Vector2(672, -96)
+
+[node name="DirtTile5" parent="Tiles" instance=ExtResource("2_50glp")]
+position = Vector2(576, -96)
+
+[node name="DirtTile6" parent="Tiles" instance=ExtResource("2_50glp")]
+position = Vector2(480, -96)
+
 [node name="AvailableTile" parent="Tiles" instance=ExtResource("1_r150o")]
 
 [node name="AvailableTile2" parent="Tiles" instance=ExtResource("1_r150o")]
 position = Vector2(96, 0)
 
 [node name="AvailableTile3" parent="Tiles" instance=ExtResource("1_r150o")]
-position = Vector2(192, 0)
+position = Vector2(192, -96)
 
 [node name="AvailableTile4" parent="Tiles" instance=ExtResource("1_r150o")]
 position = Vector2(288, 0)
@@ -54,10 +70,13 @@ position = Vector2(480, 192)
 position = Vector2(576, 192)
 
 [node name="AvailableTile16" parent="Tiles" instance=ExtResource("1_r150o")]
-position = Vector2(288, -96)
+position = Vector2(192, 0)
 
 [node name="AvailableTile17" parent="Tiles" instance=ExtResource("1_r150o")]
 position = Vector2(288, -192)
+
+[node name="AvailableTile20" parent="Tiles" instance=ExtResource("1_r150o")]
+position = Vector2(384, -96)
 
 [node name="AvailableTile18" parent="Tiles" instance=ExtResource("1_r150o")]
 position = Vector2(384, -192)
@@ -68,6 +87,9 @@ position = Vector2(480, 96)
 [node name="AvailableTile11" parent="Tiles" instance=ExtResource("1_r150o")]
 position = Vector2(576, 96)
 
+[node name="AvailableTile19" parent="Tiles" instance=ExtResource("1_r150o")]
+position = Vector2(864, -96)
+
 [node name="PawnList" type="Node2D" parent="."]
 
 [node name="Pawn" parent="PawnList" instance=ExtResource("2_idj7w")]
@@ -77,7 +99,7 @@ position = Vector2(288, 0)
 CharData = ExtResource("5_pbw6q")
 
 [node name="Pawn3" parent="PawnList" instance=ExtResource("2_idj7w")]
-position = Vector2(576, 96)
+position = Vector2(864, -96)
 CharData = ExtResource("6_v1gob")
 
 [node name="Pawn4" parent="PawnList" instance=ExtResource("2_idj7w")]
