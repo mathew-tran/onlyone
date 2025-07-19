@@ -31,9 +31,13 @@ var CurrentDirection = DIRECTION.RIGHT
 var MovesLeft = 3
 
 signal OnCharacterUpdate(pawn)
+signal OnDeath
 
 @export var CharData : CharacterData
 
+	
+func Speak(words):
+	$TalkBubble.Speak(words)
 	
 func IsTired():
 	return CurrentState == PAWN_STATE.TIRED
@@ -83,6 +87,7 @@ func EndTurn():
 	
 	
 func _ready() -> void:
+	name = "PAWN_" + CharData.Name
 	$TextureRect.texture = CharData.CharImage
 	CreateAttackPreviewHighlight()
 
@@ -124,7 +129,8 @@ func _process(delta: float) -> void:
 			MovesLeft = 0
 			print(name + "shoot")
 			await Shoot()
-			Helper.GetGame().OnPawnUpdate.emit()
+			if Helper.GetGame():
+				Helper.GetGame().OnPawnUpdate.emit()
 			set_process(true)
 		else:
 			var data = {}
@@ -237,8 +243,9 @@ func Shoot():
 		instance.global_position = global_position
 		instance.InitialPosition = global_position
 		instance.TargetPosition = pos
-		Helper.GetEffectsGroup().add_child(instance)
-		await instance.OnComplete
+		if Helper.GetEffectsGroup():
+			Helper.GetEffectsGroup().add_child(instance)
+			await instance.OnComplete
 	
 func GetForwardVector():
 	match CurrentDirection:
@@ -283,4 +290,5 @@ func Kill():
 	tween.tween_property(self, "scale", Vector2.ZERO, .3)
 	await tween.finished
 	
+	OnDeath.emit()
 	queue_free()

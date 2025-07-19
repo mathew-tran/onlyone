@@ -6,30 +6,41 @@ class_name Game
 
 signal OnPawnUpdate
 signal OnEndTurn
-
+signal OnTurnStart(amount)
 var TabIndex = -1
+var Turns = 0
+
+
 func _ready() -> void:
 	for pawn in GetPawnList():
 		pawn.Refresh()
 	OnEndTurn.connect(EndTurn)
+	
 	EndTurn()
+	OnTurnStart.emit(Turns)
 	
 func GetPawnList():
-	return $PawnList.get_children()
+	if $PawnList:
+		return $PawnList.get_children()
+	return []
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("tab"):
-		SwitchNextValidPawn()
+		#SwitchNextValidPawn()
+		pass
+	if event.is_action_pressed("restart"):
+		get_tree().reload_current_scene()
 
 func SwitchNextValidPawn():
 	TabIndex += 1
 	if TabIndex >= len(GetPawnList()):
 		TabIndex = 0
 	
-	if GetPawnList()[TabIndex].IsAvailable():
-		CurrentPawn.StallTurn()
-		CurrentPawn = GetPawnList()[TabIndex]
-		CurrentPawn.StartTurn()
+	if GetPawnList():
+		if GetPawnList()[TabIndex].IsAvailable():
+			CurrentPawn.StallTurn()
+			CurrentPawn = GetPawnList()[TabIndex]
+			CurrentPawn.StartTurn()
 			
 func DecideNextPawn():
 	var nextPawn : Pawn
@@ -47,6 +58,9 @@ func DecideNextPawn():
 	else:
 		for pawn in GetPawnList():
 			pawn.Refresh()
+		Turns += 1
+		$CanvasLayer/Label.text = "TURN " + str(Turns)
+		OnTurnStart.emit(Turns)
 		DecideNextPawn()
 	
 		
@@ -62,5 +76,9 @@ func _process(delta: float) -> void:
 
 
 func _on_pawn_list_child_order_changed() -> void:
+	if is_instance_valid($CanvasLayer) == false:
+		return
 	if len(GetPawnList()) == 1:
-		print("YOU WIN!")
+		$CanvasLayer/DeadEndPanel.visible = true
+	else:
+		$CanvasLayer/DeadEndPanel.visible = false

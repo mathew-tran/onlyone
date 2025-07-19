@@ -1,10 +1,16 @@
 extends Node
 
 func GetGame() -> Game:
-	return get_tree().get_nodes_in_group("Game")[0]
+	var result = get_tree().get_nodes_in_group("Game")
+	if result:
+		return result[0]
+	return null
 
 func GetEffectsGroup():
-	return get_tree().get_nodes_in_group("Effects")[0]
+	var result = get_tree().get_nodes_in_group("Effects")
+	if result:
+		return result[0]
+	return null
 
 func CreateText(data, textPosition):
 	var textClass = load("res://Prefabs/UI/PopupText.tscn")

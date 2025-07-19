@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://dw1qfud8wiht5"]
+
+[ext_resource type="PackedScene" uid="uid://bq0h60wfvn4qx" path="res://Scenes/LevelBase.tscn" id="1_4rk67"]
+[ext_resource type="PackedScene" uid="uid://dovjqvgagph61" path="res://Prefabs/Tile.tscn" id="2_f8qf7"]
+[ext_resource type="PackedScene" uid="uid://ktwoml5qvsxe" path="res://Prefabs/Pawn.tscn" id="3_lmdar"]
+
+[node name="Game" instance=ExtResource("1_4rk67")]
+
+[node name="AvailableTile" parent="Tiles" index="0" instance=ExtResource("2_f8qf7")]
+
+[node name="AvailableTile2" parent="Tiles" index="1" instance=ExtResource("2_f8qf7")]
+position = Vector2(96, 0)
+
+[node name="AvailableTile3" parent="Tiles" index="2" instance=ExtResource("2_f8qf7")]
+position = Vector2(192, 0)
+
+[node name="AvailableTile4" parent="Tiles" index="3" instance=ExtResource("2_f8qf7")]
+position = Vector2(288, 0)
+
+[node name="AvailableTile5" parent="Tiles" index="4" instance=ExtResource("2_f8qf7")]
+position = Vector2(384, 0)
+
+[node name="AvailableTile6" parent="Tiles" index="5" instance=ExtResource("2_f8qf7")]
+position = Vector2(480, 0)
+
+[node name="PAWN_Knight" parent="PawnList" index="0" instance=ExtResource("3_lmdar")]

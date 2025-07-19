@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://dwfeudwqmdjdc"]
+
+[ext_resource type="PackedScene" uid="uid://bq0h60wfvn4qx" path="res://Scenes/LevelBase.tscn" id="1_5jgm0"]
+[ext_resource type="PackedScene" uid="uid://dovjqvgagph61" path="res://Prefabs/Tile.tscn" id="2_riv1q"]
+[ext_resource type="PackedScene" uid="uid://ktwoml5qvsxe" path="res://Prefabs/Pawn.tscn" id="3_xvio3"]
+[ext_resource type="Resource" uid="uid://c2dm8hbtxneb8" path="res://Content/Characters/Mage_CharacterData.tres" id="4_kri6y"]
+[ext_resource type="Script" uid="uid://g6iocgrjb6cd" path="res://Scripts/TurnScenarioListener.gd" id="6_4d3fe"]
+[ext_resource type="Script" uid="uid://h0tuhqil44sl" path="res://Scripts/Objectives/KillObjectiveListener.gd" id="6_8h4de"]
+
+[node name="Game" instance=ExtResource("1_5jgm0")]
+
+[node name="AvailableTile" parent="Tiles" index="0" instance=ExtResource("2_riv1q")]
+
+[node name="AvailableTile2" parent="Tiles" index="1" instance=ExtResource("2_riv1q")]
+position = Vector2(96, 0)
+
+[node name="AvailableTile3" parent="Tiles" index="2" instance=ExtResource("2_riv1q")]
+position = Vector2(192, 0)
+
+[node name="AvailableTile4" parent="Tiles" index="3" instance=ExtResource("2_riv1q")]
+position = Vector2(288, 0)
+
+[node name="AvailableTile5" parent="Tiles" index="4" instance=ExtResource("2_riv1q")]
+position = Vector2(384, 0)
+
+[node name="AvailableTile6" parent="Tiles" index="5" instance=ExtResource("2_riv1q")]
+position = Vector2(480, 0)
+
+[node name="PAWN_Knight" parent="PawnList" index="0" instance=ExtResource("3_xvio3")]
+
+[node name="PAWN_Mage" parent="PawnList" index="1" instance=ExtResource("3_xvio3")]
+position = Vector2(480, 0)
+CharData = ExtResource("4_kri6y")
+
+[node name="OBJ-LIST-KILL-Knight-LEVEL-CHANGE" type="Node" parent="Objectives" index="0" node_paths=PackedStringArray("Character")]
+script = ExtResource("6_8h4de")
+Character = NodePath("../../PawnList/PAWN_Knight")
+PlaceToGoTo = "uid://dw1qfud8wiht5"
+metadata/_custom_type_script = "uid://h0tuhqil44sl"
+
+[node name="SCEN-TURN1-SPEAK" type="Node2D" parent="ScenarioListeners" index="0" node_paths=PackedStringArray("Character")]
+script = ExtResource("6_4d3fe")
+TurnNumber = 1
+Dialogue = "YOU'LL NEVER TAKE ME ALIVE!"
+Character = NodePath("../../PawnList/PAWN_Knight")
+metadata/_custom_type_script = "uid://g6iocgrjb6cd"
